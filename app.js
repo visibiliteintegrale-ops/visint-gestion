@@ -158,20 +158,20 @@ async function viewDashboard(el) {
       <div class="card"><h3>Clients par source</h3><div class="chart-wrap"><canvas id="cSrc"></canvas></div></div>
     </div>`;
 
-  const C = ['#1f6fb2', '#15803d', '#e8a33d', '#b91c1c', '#6d28d9', '#0891b2', '#64748b'];
+  const C = ['#5D3A9B', '#00AEEF', '#F5A623', '#b91c1c', '#7C4DCC', '#00C2C7', '#6B6880'];
   charts.mois = new Chart($('#cMois'), { type: 'bar', data: {
     labels: mois.lignes.map(l => l.service),
     datasets: [
-      { label: 'Objectif', data: mois.lignes.map(l => l.objectif), backgroundColor: '#cbd5e1' },
-      { label: 'Réalisé', data: mois.lignes.map(l => l.realise), backgroundColor: '#1f6fb2' }],
+      { label: 'Objectif', data: mois.lignes.map(l => l.objectif), backgroundColor: '#C9D3DE' },
+      { label: 'Réalisé', data: mois.lignes.map(l => l.realise), backgroundColor: '#5D3A9B' }],
   }, options: chartOpts(true) });
   charts.etat = new Chart($('#cEtat'), { type: 'doughnut', data: {
     labels: Object.keys(s.etats_prospects),
-    datasets: [{ data: Object.values(s.etats_prospects), backgroundColor: ['#15803d', '#1f6fb2', '#b91c1c'] }],
+    datasets: [{ data: Object.values(s.etats_prospects), backgroundColor: ['#00AEEF', '#5D3A9B', '#b91c1c'] }],
   }, options: chartOpts(false) });
   charts.seg = new Chart($('#cSeg'), { type: 'doughnut', data: {
     labels: Object.keys(cli.segments),
-    datasets: [{ data: Object.values(cli.segments), backgroundColor: ['#15803d', '#e8a33d', '#b91c1c'] }],
+    datasets: [{ data: Object.values(cli.segments), backgroundColor: ['#5D3A9B', '#00AEEF', '#b91c1c'] }],
   }, options: chartOpts(false) });
   charts.src = new Chart($('#cSrc'), { type: 'bar', data: {
     labels: cli.sources.map(x => x.source),
@@ -374,10 +374,10 @@ async function viewAnnuel(el) {
   charts.an = new Chart($('#cAn'), { type: 'line', data: {
     labels: d.mois.map(m => m.mois_nom),
     datasets: [
-      { label: 'CA réalisé', data: d.mois.map(m => m.ca), borderColor: '#1f6fb2',
-        backgroundColor: 'rgba(31,111,178,.12)', fill: true, tension: .3 },
+      { label: 'CA réalisé', data: d.mois.map(m => m.ca), borderColor: '#5D3A9B',
+        backgroundColor: 'rgba(93,58,155,.12)', fill: true, tension: .3 },
       { label: 'Objectif mensuel', data: d.mois.map(() => d.objectif_annuel / 12),
-        borderColor: '#e8a33d', borderDash: [6, 4], pointRadius: 0 }],
+        borderColor: '#00AEEF', borderDash: [6, 4], pointRadius: 0 }],
   }, options: chartOpts(true) });
 }
 

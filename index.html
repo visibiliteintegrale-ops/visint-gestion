@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VISINT COMMUNICATION — Gestion commerciale</title>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="stylesheet" href="/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
@@ -12,7 +13,10 @@
 <!-- Connexion -->
 <div id="login" class="login-wrap">
   <form id="loginForm" class="login-card">
-    <div class="brand-big">VISINT<span>COMMUNICATION</span></div>
+    <div class="login-brand">
+      <div id="logoLogin"></div>
+      <div class="login-name">VISINT<span>COMMUNICATION</span></div>
+    </div>
     <p class="login-sub">Pilotage commercial</p>
     <input id="lu" placeholder="Identifiant" autocomplete="username" required>
     <input id="lp" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
@@ -24,14 +28,31 @@
 <!-- Application -->
 <div id="appui" class="hidden">
   <aside class="side">
-    <div class="brand">VISINT<span>COMMUNICATION</span></div>
+    <div class="side-brand">
+      <div class="logo">
+        <div id="logoSide"></div>
+        <div class="logo-txt"><span class="n">VISINT</span><span class="s">COMMUNICATION</span></div>
+      </div>
+    </div>
     <nav>
-      <a data-view="dashboard" class="active">📊 Tableau de bord</a>
-      <a data-view="prospects">🎯 Prospects</a>
-      <a data-view="ventes">💰 Ventes</a>
-      <a data-view="clients">👥 Clients</a>
-      <a data-view="annuel">📈 Évolution annuelle</a>
-      <a data-view="parametres">⚙️ Paramètres</a>
+      <a data-view="dashboard" class="active">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        Tableau de bord</a>
+      <a data-view="prospects">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>
+        Prospects</a>
+      <a data-view="ventes">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/><path d="M9 8h6M9 12h6"/></svg>
+        Ventes</a>
+      <a data-view="clients">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Clients</a>
+      <a data-view="annuel">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        Évolution annuelle</a>
+      <a data-view="parametres">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.6 7a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H7a1.7 1.7 0 0 0 1-1.5V1a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V7a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+        Paramètres</a>
     </nav>
     <div class="side-foot">
       <span id="whoami"></span>
@@ -57,6 +78,7 @@
 
 <div id="toast" class="toast hidden"></div>
 
+<script src="/logo-inline.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>
