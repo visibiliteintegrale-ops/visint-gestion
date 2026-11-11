@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VISINT COMMUNICATION — Gestion commerciale</title>
+<link rel="stylesheet" href="/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- Connexion -->
+<div id="login" class="login-wrap">
+  <form id="loginForm" class="login-card">
+    <div class="brand-big">VISINT<span>COMMUNICATION</span></div>
+    <p class="login-sub">Pilotage commercial</p>
+    <input id="lu" placeholder="Identifiant" autocomplete="username" required>
+    <input id="lp" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
+    <button type="submit">Se connecter</button>
+    <div id="loginErr" class="err"></div>
+  </form>
+</div>
+
+<!-- Application -->
+<div id="appui" class="hidden">
+  <aside class="side">
+    <div class="brand">VISINT<span>COMMUNICATION</span></div>
+    <nav>
+      <a data-view="dashboard" class="active">📊 Tableau de bord</a>
+      <a data-view="prospects">🎯 Prospects</a>
+      <a data-view="ventes">💰 Ventes</a>
+      <a data-view="clients">👥 Clients</a>
+      <a data-view="annuel">📈 Évolution annuelle</a>
+      <a data-view="parametres">⚙️ Paramètres</a>
+    </nav>
+    <div class="side-foot">
+      <span id="whoami"></span>
+      <button id="logout">Déconnexion</button>
+    </div>
+  </aside>
+  <main class="content">
+    <div id="view"></div>
+  </main>
+</div>
+
+<!-- Modale -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <h3 id="modalTitle"></h3>
+    <div id="modalBody"></div>
+    <div class="modal-actions">
+      <button id="modalCancel" class="btn-ghost">Annuler</button>
+      <button id="modalSave">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: visint-gestion
+    runtime: docker
+    plan: starter
+    disk:
+      name: visint-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: VISINT_DB
+        value: /data/visint.db
